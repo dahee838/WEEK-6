@@ -1,0 +1,121 @@
+int p = 0;
+float[] x = {};
+float[] y = {};
+float[] l = {};
+float[] w = {};
+
+
+
+
+void setup() 
+{
+
+  for (int i = 0; i < x.length; i++) 
+  {
+    x[i] = random(30);
+    y[i] = random(x[i]);
+    l[i] = 20;
+    w[i] = 60;
+  }
+
+  size (600, 800);
+  noStroke();
+
+}
+
+void draw() 
+{
+  for (int i = 0; i < x.length; i++) 
+  {
+    x[i] = random(30);
+    y[i] = random(x[i]);
+    l[i] = 20;
+    w[i] = 60;
+  }
+
+  if (mousePressed == true)
+  {
+    int i = 0;
+    i++;
+    noStroke();
+    background(255);
+    fill(255, 255, 10);
+    x[i] = random(30);
+    y[i] = random(x[i]);
+    l[i] = 20;
+    w[i] = 60;
+    ellipse(x[i], y[i], l[i], w[i]);
+
+    /*drawDay();
+     movingClouds();*/
+  } else
+  {
+    drawNight();
+  }
+}
+
+void drawDay()
+{  
+  int i = 0;
+  i++;
+  x[i] = random(30);
+  y[i] = random(x[i]);
+  l[i] = 20;
+  w[i] = 60;
+  noStroke();
+  background(255);
+  fill(255, 255, 10);
+  ellipse(x[i], y[i], l[i], w[i]);
+}
+
+void drawNight()
+{
+  int i = 0;
+  i++;
+
+  x[i] = random(30);
+  y[i] = random(x[i]);
+  l[i] = 20;
+  w[i] = 60;
+
+  background(0);
+  translate(10, 400);
+  fill(0, 100, 200);
+  ellipse(x[i], y[i], l[i], w[i]);
+}
+
+void movingClouds()
+{
+  int i = 0;
+  i++;
+  x[i] = random(30);
+  y[i] = random(x[i]);
+  l[i] = 20;
+  w[i] = 60;
+
+  p = p + 1;
+  fill(0, 0, 255);
+  noStroke();
+  translate(p, 100);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  translate(p/1, 200);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  translate(p, 50);
+  scale(.5);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  translate(p, 5);
+  scale(2.5);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  translate(p, 80);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+  ellipse(x[i], y[i], 60, 20);
+}
